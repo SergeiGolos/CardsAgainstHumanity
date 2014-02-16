@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+</head>
+    <body>        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <a href="https://github.com/SergeiGolos/CardsAgainstHumanity" style="z-index: 1090;">
+                <img style="position: absolute; top: 0; right: 0; border: 0;"
+                     src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
+                     alt="Fork me on GitHub">
+            </a>    
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("#CAH - Rando Generator", "Index", "Home", null, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                          
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>Completely unofficial Rando generator using Cards Against Humanity text. Get the real life party game at <a href="http://www.cardsagainsthumanity.com/">http://www.cardsagainsthumanity.com/</a> </p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/lib")
+        @Scripts.Render("~/bundles/src")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
