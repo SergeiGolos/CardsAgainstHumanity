@@ -23,10 +23,7 @@ namespace CardsAgainstHumanity.Controllers
         [HttpGet]
         public GameState GetState()
         {
-            var blackCard = _game.BlackDeck.Draw(1).First();
-            var whiteCards = _game.WhiteDeck.Draw(((BlackCard)blackCard).Count);
-
-            return new GameState(blackCard, whiteCards);
+            return _game.NewState();
         }
 
         [HttpGet]

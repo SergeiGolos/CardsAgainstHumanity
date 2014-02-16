@@ -1,27 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CardsAgainstHumanity.Interfaces;
-using CardsAgainstHumanity.Models;
 
 namespace CardsAgainstHumanity.Controllers
 {
-    public class HomeController : Controller
+    public class ChromeCastController : Controller
     {
         private readonly IGame _game;
 
-        public HomeController(IGame game)
+        public ChromeCastController(IGame game)
         {
             _game = game;
         }
 
+        //
+        // GET: /ChromeCast/
         public ActionResult Index()
         {
-            var blackCard = _game.BlackDeck.Draw(1).First();
-            var whiteCards = _game.WhiteDeck.Draw(((BlackCard) blackCard).Count);
-
             return View(_game.NewState());
         }
-    }
+	}
 }

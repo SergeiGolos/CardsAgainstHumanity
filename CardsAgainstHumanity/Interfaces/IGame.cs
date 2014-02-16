@@ -8,5 +8,7 @@ namespace CardsAgainstHumanity.Interfaces
         IDeck WhiteDeck { get; set; }
         IDeck BlackDeck { get; set; }
         IList<Player> Player { get; set; }
+
+        GameState NewState();
     }
 }
