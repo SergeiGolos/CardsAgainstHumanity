@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C214F3
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D3BAB6EB-A769-4D17-B3F9-F0CD22C6302E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsAgainstHumanity.Integration", "CardsAgainstHumanity.Integration\CardsAgainstHumanity.Integration.csproj", "{F40E5BA2-8225-4876-8169-68D94D17F3EF}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -32,8 +36,16 @@ Global
 		{ED4EDC0A-3A4F-45B5-A5D4-39D7CFFB1231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4EDC0A-3A4F-45B5-A5D4-39D7CFFB1231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED4EDC0A-3A4F-45B5-A5D4-39D7CFFB1231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40E5BA2-8225-4876-8169-68D94D17F3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40E5BA2-8225-4876-8169-68D94D17F3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40E5BA2-8225-4876-8169-68D94D17F3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40E5BA2-8225-4876-8169-68D94D17F3EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED4EDC0A-3A4F-45B5-A5D4-39D7CFFB1231} = {D3BAB6EB-A769-4D17-B3F9-F0CD22C6302E}
+		{F40E5BA2-8225-4876-8169-68D94D17F3EF} = {D3BAB6EB-A769-4D17-B3F9-F0CD22C6302E}
 	EndGlobalSection
 EndGlobal

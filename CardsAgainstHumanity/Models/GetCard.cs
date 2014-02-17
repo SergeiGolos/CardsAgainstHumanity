@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using CardsAgainstHumanity.Installers;
+using CardsAgainstHumanity.Interfaces;
 
 namespace CardsAgainstHumanity.Models
 {

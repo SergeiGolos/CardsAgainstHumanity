@@ -2,8 +2,7 @@
     <div class="jumbotron" ng-controller="game" ng-init="state = @Json.Encode(Model).ToString();">
         <div class="card-container">
             <p><a ng-click="draw()" class="btn btn-primary btn-large">Draw</a></p>
-            <div class="card card-black">{{state.Black.Text}}</div>
-            <div class="card card-white" ng-repeat="card in state.White">{{card.Text}}</div>
+            @Html.Partial("Cards");
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@ input[type="checkbox"].input-validation-error {
 
 .card {
     font-weight: bold;
-    font-size: .7em;
+    font-size: 1em;
     height: 260px;
     width: 180px;
     float: left;

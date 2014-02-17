@@ -13,15 +13,13 @@ namespace CardsAgainstHumanity.Controllers
 
         public HomeController(IGame game)
         {
-            _game = game;
+            _game = game;            
         }
 
         public ActionResult Index()
         {
-            var blackCard = _game.BlackDeck.Draw(1).First();
-            var whiteCards = _game.WhiteDeck.Draw(((BlackCard) blackCard).Count);
-
-            return View(_game.NewState());
+            var round = _game.NewRound();       
+            return View(round);            
         }
     }
 }

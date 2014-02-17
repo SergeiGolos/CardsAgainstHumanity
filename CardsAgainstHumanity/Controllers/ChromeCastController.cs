@@ -12,7 +12,7 @@ namespace CardsAgainstHumanity.Controllers
         private readonly IGame _game;
 
         public ChromeCastController(IGame game)
-        {
+        {           
             _game = game;
         }
 
@@ -20,7 +20,8 @@ namespace CardsAgainstHumanity.Controllers
         // GET: /ChromeCast/
         public ActionResult Index()
         {
-            return View(_game.NewState());
+            var round = _game.NewRound();            
+            return View(round);
         }
 	}
 }

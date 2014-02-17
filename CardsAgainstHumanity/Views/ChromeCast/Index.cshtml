@@ -6,10 +6,6 @@
 }
 
 <div ng-app="randoHome" class="jumbotron" ng-controller="chrome" ng-init="state = @Json.Encode(Model).ToString();">
-    <div style="float:right">New in: {{count}}</div>
-    <div class="card-container">
-        <div class="card card-black">{{state.Black.Text}}</div>
-        <div class="card card-white" ng-repeat="card in state.White">{{card.Text}}</div>       
-    </div>
-    
+    <h3 style="float:right">New in: {{count}}</h3>
+    @Html.Partial("Cards")
 </div>

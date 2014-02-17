@@ -5,10 +5,14 @@ namespace CardsAgainstHumanity.Interfaces
 {
     public interface IGame
     {
+        int ScoreLimit { get; set; }
+
         IDeck WhiteDeck { get; set; }
         IDeck BlackDeck { get; set; }
-        IList<Player> Player { get; set; }
+        IList<IPlayer> Player { get; set; }
 
-        GameState NewState();
+        IRound NewRound();
+        IRound Round { get; set; }
+        bool EndRound();
     }
 }

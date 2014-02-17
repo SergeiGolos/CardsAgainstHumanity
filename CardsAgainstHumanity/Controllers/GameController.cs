@@ -17,13 +17,13 @@ namespace CardsAgainstHumanity.Controllers
 
         public GameController(IGame game)
         {
-            _game = game;
+            _game = game;            
         }
 
         [HttpGet]
-        public GameState GetState()
+        public IRound GetState()
         {
-            return _game.NewState();
+            return _game.NewRound();
         }
 
         [HttpGet]

@@ -83,8 +83,8 @@ namespace CardsAgainstHumanity.Tests.Models
         {
             var cards = A.Fake<IList<ICard>>();
             A.CallTo(() => cards.Count).Returns(10);
-            A.CallTo(() => cards[A<int>._]).ReturnsLazily(n => 
-                new WhiteCard(string.Format("{0},1", n.Arguments[0].ToString())));
+            A.CallTo(() => cards[A<int>._]).ReturnsLazily(n =>
+                new WhiteCard("1", string.Format("{0},1", n.Arguments[0].ToString())));
 
             var deck = new Deck(cards);
             IEnumerable<ICard> enumerable = deck.Draw(draw);
@@ -104,7 +104,7 @@ namespace CardsAgainstHumanity.Tests.Models
             var cards = A.Fake<IList<ICard>>();
             A.CallTo(() => cards.Count).Returns(1);
             A.CallTo(() => cards[A<int>._]).ReturnsLazily(n =>
-                new WhiteCard(string.Format("{0},1", n.Arguments[0].ToString())));
+                new WhiteCard("1", string.Format("{0},1", n.Arguments[0].ToString())));
 
             var deck = new Deck(cards);
             IEnumerable<ICard> result = deck.Draw(10);

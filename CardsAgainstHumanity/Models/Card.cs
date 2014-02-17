@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using CardsAgainstHumanity.Interfaces;
 
 namespace CardsAgainstHumanity.Models
 {
     public abstract class Card : ICard
     {
-        protected Card(string value, int size)
+        protected Card(string id, string value, int size)
         {
             string[] split = value.Split(',');
             if (split.Length < size)
@@ -15,21 +16,25 @@ namespace CardsAgainstHumanity.Models
             }
 
             this.Text = string.Join(",", split.Take(split.Length - (size - 1)));
+            this.Id = id;
         }
 
-        public string Text { get; set; }        
+        public string Id { get; set; }
+        public string Text { get; set; }
+        public int Count { get; set; }
     }
 
     public class WhiteCard : Card
     {
-        public WhiteCard(string value) : base(value,2)
-        {           
+        public WhiteCard(string id, string value) : base(id, value,2)
+        {
+            this.Count = 1;
         }
     }
 
     public class BlackCard : Card
     {
-        public BlackCard(string value) : base(value,3)
+        public BlackCard(string id, string value): base(id,value, 3)
         {            
             var countString = value.Substring(value.LastIndexOf(",", System.StringComparison.Ordinal) + 1);
             var count = 0;
@@ -40,7 +45,6 @@ namespace CardsAgainstHumanity.Models
             this.Count = count;
             
         }
-
-        public int Count { get; set; }
+    
     }
 }

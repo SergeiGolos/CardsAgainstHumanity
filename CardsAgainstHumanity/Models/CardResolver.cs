@@ -16,13 +16,13 @@ namespace CardsAgainstHumanity.Models
         public System.Collections.Generic.IList<ICard> GetWhite()
         {
             var list = _resolver.Request("http://www.cardsagainsthumanity.com/lab/LoadWhiteCards.php");
-            return list.Skip(1).Select(n => new WhiteCard(n)).ToList<ICard>();
+            return list.Skip(1).Select(n => new WhiteCard(list.IndexOf(n).ToString(), n)).ToList<ICard>();
         }
 
         public System.Collections.Generic.IList<ICard> GetBlack()
         {
             var list = _resolver.Request("http://www.cardsagainsthumanity.com/lab/LoadBlackCards.php");
-            return list.Skip(1).Select(n => new BlackCard(n)).ToList<ICard>();
+            return list.Skip(1).Select(n => new BlackCard(list.IndexOf(n).ToString(), n)).ToList<ICard>();
         }        
        
         

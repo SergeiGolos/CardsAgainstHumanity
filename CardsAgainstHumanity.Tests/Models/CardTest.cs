@@ -13,7 +13,7 @@ namespace CardsAgainstHumanity.Tests.Models
         {
             string cardValue = "test";
             string formatCardWrapper = string.Format("{0},1", cardValue);
-            ICard card = new WhiteCard(formatCardWrapper);
+            ICard card = new WhiteCard("1", formatCardWrapper);
             Assert.Equal(cardValue, card.Text);
         }
         
@@ -23,7 +23,7 @@ namespace CardsAgainstHumanity.Tests.Models
             string cardValue = "test";
             string formatCardWrapper = string.Format("{0}", cardValue);
 
-            string message = Assert.Throws<ArgumentException>(() => new WhiteCard(formatCardWrapper)).Message;
+            string message = Assert.Throws<ArgumentException>(() => new WhiteCard("1", formatCardWrapper)).Message;
             Assert.True(message.Contains(string.Format("[ test ]")));
         }
 
@@ -35,7 +35,7 @@ namespace CardsAgainstHumanity.Tests.Models
         public void Card_White_Card_fromString(string cardValue)
         {            
             string formatCardWrapper = string.Format("{0},1", cardValue);
-            ICard card = new WhiteCard(formatCardWrapper);
+            ICard card = new WhiteCard("1", formatCardWrapper);
             Assert.Equal(cardValue, card.Text);
         }
 
@@ -45,7 +45,7 @@ namespace CardsAgainstHumanity.Tests.Models
         {
             string cardValue = "test";
             string formatCardWrapper = string.Format("{0},1,1", cardValue);
-            ICard card = new BlackCard(formatCardWrapper);
+            ICard card = new BlackCard("1", formatCardWrapper);
             Assert.Equal(cardValue, card.Text);
         }
 
@@ -55,7 +55,7 @@ namespace CardsAgainstHumanity.Tests.Models
             string cardValue = "test";
             string formatCardWrapper = string.Format("{0},1", cardValue);
 
-            string message = Assert.Throws<ArgumentException>(() => new BlackCard(formatCardWrapper)).Message;
+            string message = Assert.Throws<ArgumentException>(() => new BlackCard("1", formatCardWrapper)).Message;
             Assert.True(message.Contains(string.Format("[ test,1 ]")));
         }
 
@@ -65,7 +65,7 @@ namespace CardsAgainstHumanity.Tests.Models
             string cardValue = "test";
             string formatCardWrapper = string.Format("{0},,z", cardValue);
 
-            string message = Assert.Throws<ArgumentException>(() => new BlackCard(formatCardWrapper)).Message;
+            string message = Assert.Throws<ArgumentException>(() => new BlackCard("1", formatCardWrapper)).Message;
             Assert.True(message.Contains(string.Format("[ test,,z ]")));
         }
 
@@ -77,7 +77,7 @@ namespace CardsAgainstHumanity.Tests.Models
         public void Black_Card_Card_fromString(string cardValue)
         {
             string formatCardWrapper = string.Format("{0},1,1", cardValue);
-            ICard card = new BlackCard(formatCardWrapper);
+            ICard card = new BlackCard("1", formatCardWrapper);
             Assert.Equal(cardValue, card.Text);
         }
     }
